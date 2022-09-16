@@ -1,0 +1,49 @@
+
+ .card-container img{
+    width: 9rem;
+}
+
+.card-container{
+    display: grid;
+   grid-template-columns: 1fr;
+   justify-content:center ;
+   transition:all 1s ease;
+   transform-style: preserve-3d;
+
+}
+
+.card-front{
+    grid-area: 1/1;
+    transform: rotateY(-180deg);
+    z-index: 2 1;
+    backface-visibility: hidden;
+    flex:0 0 calc(33.33% - 30px);
+}
+
+.card-back{
+    grid-area: 1/1;
+}
+
+.cards-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card{
+    margin:1rem;
+    perspective: 1000px;
+}
+
+.card:hover .card-container {
+    transform: rotateY(180deg);
+}
+@media(max-width: 991px){
+    .card .card-front{
+    flex: 0 0 calc(50% - 30px); }   
+}
+@media(max-width:767px){
+    .flip-main .flip-card{
+    flex: 0 0 calc(100% - 30px);    }
+}
+
